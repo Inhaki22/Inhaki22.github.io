@@ -31,16 +31,13 @@
 html, body { height: 100%; background: var(--bg); color: var(--text);
   font-family: 'DM Sans', sans-serif; font-size: 14px; }
 
-/* ── SCROLLBAR ── */
 ::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 10px; }
 
-/* ── APP ── */
 .app { min-height: 100vh; display: flex; flex-direction: column; gap: 20px;
   padding: 24px 18px 40px; }
 
-/* ── HEADER ── */
 header { display: flex; align-items: center; justify-content: space-between;
   gap: 12px; flex-wrap: wrap; }
 
@@ -50,7 +47,6 @@ header { display: flex; align-items: center; justify-content: space-between;
 
 .header-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
-/* ── BUTTONS ── */
 .btn {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 8px 14px; border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif;
@@ -66,7 +62,6 @@ header { display: flex; align-items: center; justify-content: space-between;
 .btn-danger:hover { background: rgba(255,95,95,.08); opacity: 1; }
 .btn-sm { padding: 5px 10px; font-size: 12px; }
 
-/* ── ADD BAR ── */
 .add-bar { display: flex; gap: 8px; flex-wrap: wrap; }
 .add-bar input, .add-bar select {
   background: var(--surface); border: 1px solid var(--border);
@@ -79,10 +74,8 @@ header { display: flex; align-items: center; justify-content: space-between;
 .add-bar input:focus, .add-bar select:focus { border-color: var(--amber); }
 .add-bar select { cursor: pointer; }
 
-/* ── BOARD ── */
 .board { display: flex; gap: 14px; align-items: flex-start; flex-wrap: wrap; flex: 1; }
 
-/* ── COLUMN ── */
 .column {
   flex: 1 1 280px; min-width: 230px; background: var(--surface);
   border: 1px solid var(--border); border-radius: 16px;
@@ -114,7 +107,6 @@ header { display: flex; align-items: center; justify-content: space-between;
 
 .task-list { padding: 10px 8px; display: flex; flex-direction: column; gap: 7px; min-height: 70px; }
 
-/* ── TASK CARD ── */
 .task {
   background: var(--bg); border: 1px solid var(--border);
   border-radius: 10px; padding: 11px 12px 9px;
@@ -132,16 +124,14 @@ header { display: flex; align-items: center; justify-content: space-between;
   transition: color .15s, background .15s; }
 .btn-delete:hover { color: var(--red); background: rgba(255,95,95,.1); }
 
-/* ── ASSIGNEES ROW ── */
 .task-footer { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
-.assignees { display: flex; align-items: center; gap: -4px; position: relative; }
+.assignees { display: flex; align-items: center; }
 .avatar {
   width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--bg);
   display: flex; align-items: center; justify-content: center;
   font-size: 9px; font-weight: 700; font-family: 'Syne', sans-serif;
   margin-left: -4px; cursor: default; flex-shrink: 0; position: relative;
-  transition: transform .15s;
-  color: #000;
+  transition: transform .15s; color: #000;
 }
 .avatar:first-child { margin-left: 0; }
 .avatar:hover { transform: translateY(-2px); z-index: 1; }
@@ -159,16 +149,12 @@ header { display: flex; align-items: center; justify-content: space-between;
 }
 .btn-assign:hover { border-color: var(--amber); color: var(--amber); }
 
-/* ── GHOST ── */
 .ghost { border: 2px dashed var(--amber); border-radius: 10px; min-height: 50px;
   background: rgba(240,165,0,.04); animation: pulse .9s ease infinite alternate; }
 
-/* ── EMPTY ── */
 .empty { color: var(--muted); font-size: 12px; text-align: center;
   padding: 10px 0 4px; pointer-events: none; user-select: none; }
 
-/* ─────────────────────────────────────────── */
-/* ── MODAL BASE ── */
 .overlay {
   position: fixed; inset: 0; background: rgba(0,0,0,.65); z-index: 100;
   display: flex; align-items: center; justify-content: center; padding: 16px;
@@ -199,7 +185,6 @@ header { display: flex; align-items: center; justify-content: space-between;
 .modal-footer { padding: 12px 20px 18px; display: flex; gap: 8px; justify-content: flex-end;
   border-top: 1px solid var(--border); }
 
-/* ── USERS MODAL ── */
 .users-grid { display: flex; flex-direction: column; gap: 8px; }
 
 .user-row {
@@ -213,7 +198,6 @@ header { display: flex; align-items: center; justify-content: space-between;
   display: flex; align-items: center; justify-content: center;
   font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; color: #000; }
 .user-name { flex: 1; font-size: 14px; font-weight: 500; }
-.user-tag { font-size: 11px; color: var(--muted); }
 
 .new-user-row { display: flex; gap: 8px; }
 .new-user-row input {
@@ -225,10 +209,8 @@ header { display: flex; align-items: center; justify-content: space-between;
 .new-user-row input::placeholder { color: var(--muted); }
 .new-user-row input:focus { border-color: var(--amber); }
 
-/* ── ASSIGN MODAL ── */
 .assign-title { font-size: 13px; color: var(--text2); }
 .assign-title strong { color: var(--text); font-weight: 500; }
-
 .users-list-assign { display: flex; flex-direction: column; gap: 6px; }
 
 .user-assign-row {
@@ -238,36 +220,77 @@ header { display: flex; align-items: center; justify-content: space-between;
 }
 .user-assign-row:hover { background: var(--surface2); }
 .user-assign-row.selected { background: var(--amber-dim); border-color: rgba(240,165,0,.3); }
-.user-assign-row.selected .check { color: var(--amber); }
 .check { width: 18px; height: 18px; border-radius: 4px; border: 1.5px solid var(--border2);
   display: flex; align-items: center; justify-content: center; font-size: 11px;
-  flex-shrink: 0; transition: border-color .15s, background .15s; }
+  flex-shrink: 0; }
 .user-assign-row.selected .check { background: var(--amber); border-color: var(--amber); color: #000; }
-
 .no-users-msg { color: var(--muted); font-size: 13px; text-align: center; padding: 12px 0; }
 
-/* ── TOAST ── */
 .toast { position: fixed; bottom: 20px; right: 20px; background: var(--surface2);
   border: 1px solid var(--border2); color: var(--text); padding: 9px 16px;
   border-radius: 10px; font-size: 13px; box-shadow: 0 8px 32px rgba(0,0,0,.5);
   animation: slideUp .22s ease; z-index: 9999; pointer-events: none; }
 
-/* ── ANIMATIONS ── */
 @keyframes fadeIn  { from { opacity:0; transform:translateY(-5px); } to { opacity:1; transform:none; } }
 @keyframes slideUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
 @keyframes pulse   { from { opacity:.5; } to { opacity:1; } }
+@keyframes shake   { 0%,100%{transform:translateX(0)} 20%,60%{transform:translateX(-8px)} 40%,80%{transform:translateX(8px)} }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 520px) {
-  .app { padding: 14px 10px 28px; }
-  .logo { font-size: 17px; }
+/* PASSWORD SCREEN */
+.lock-screen {
+  position: fixed; inset: 0; background: var(--bg); z-index: 999;
+  display: flex; align-items: center; justify-content: center; padding: 24px;
 }
+.lock-screen.hidden { display: none; }
+.lock-box {
+  background: var(--surface); border: 1px solid var(--border2);
+  border-radius: 20px; padding: 40px 36px 36px;
+  width: 100%; max-width: 360px;
+  display: flex; flex-direction: column; align-items: center; gap: 24px;
+  box-shadow: 0 32px 80px rgba(0,0,0,.6);
+}
+.lock-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--amber-dim);
+  border: 1px solid rgba(240,165,0,.2); display: flex; align-items: center; justify-content: center; font-size: 22px; }
+.lock-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px;
+  letter-spacing: -.4px; text-align: center; }
+.lock-title span { color: var(--amber); }
+.lock-subtitle { font-size: 13px; color: var(--muted); text-align: center; margin-top: -16px; }
+.lock-field { width: 100%; }
+.lock-field input { width: 100%; background: var(--surface2); border: 1px solid var(--border2);
+  color: var(--text); padding: 11px 14px; border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif; font-size: 15px; outline: none;
+  transition: border-color .2s; text-align: center; letter-spacing: 2px; }
+.lock-field input::placeholder { letter-spacing: 0; color: var(--muted); }
+.lock-field input:focus { border-color: var(--amber); }
+.lock-field input.error { border-color: var(--red); animation: shake .35s ease; }
+.lock-error { font-size: 12px; color: var(--red); text-align: center; min-height: 16px; margin-top: 6px; }
+.lock-btn { width: 100%; padding: 12px; background: var(--amber); color: #000;
+  border: none; border-radius: var(--radius-sm); font-family: 'Syne', sans-serif;
+  font-weight: 700; font-size: 15px; cursor: pointer; transition: opacity .15s, transform .1s; }
+.lock-btn:hover { opacity: .85; }
+.lock-btn:active { transform: scale(.98); }
+
 </style>
 </head>
 <body>
+
+<!-- PASSWORD SCREEN -->
+<div class="lock-screen" id="lock-screen">
+  <div class="lock-box">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-title">Project<span>Dimension</span></div>
+    <div class="lock-subtitle">Introduce la contraseña para continuar</div>
+    <div class="lock-field">
+      <input type="password" id="lockInput" placeholder="Contraseña…"
+             onkeydown="if(event.key==='Enter') checkPassword()">
+      <div class="lock-error" id="lock-error"></div>
+    </div>
+    <button class="lock-btn" onclick="checkPassword()">Entrar →</button>
+  </div>
+</div>
+
 <div class="app">
 
-  <!-- HEADER -->
   <header>
     <div class="logo">Tareas<span>.</span></div>
     <div class="header-actions">
@@ -277,7 +300,6 @@ header { display: flex; align-items: center; justify-content: space-between;
     </div>
   </header>
 
-  <!-- ADD BAR -->
   <div class="add-bar">
     <input type="text" id="taskInput" placeholder="Nueva tarea…" maxlength="200" autocomplete="off">
     <select id="colSelect">
@@ -288,7 +310,6 @@ header { display: flex; align-items: center; justify-content: space-between;
     <button class="btn btn-primary" onclick="addTask()">+ Añadir</button>
   </div>
 
-  <!-- BOARD -->
   <div class="board" id="board">
     <div class="column col-pendiente" id="col-pendiente"
          ondragover="onDragOver(event)" ondragleave="onDragLeave(event)" ondrop="onDrop(event,'pendiente')">
@@ -317,12 +338,9 @@ header { display: flex; align-items: center; justify-content: space-between;
       <div class="task-list" id="list-finalizada"></div>
     </div>
   </div>
-
 </div>
 
-<!-- ══════════════════════════════ -->
-<!-- MODAL: GESTIONAR USUARIOS      -->
-<!-- ══════════════════════════════ -->
+<!-- MODAL USUARIOS -->
 <div class="overlay" id="overlay-users" onclick="closeOnBg(event,'overlay-users')">
   <div class="modal">
     <div class="modal-header">
@@ -330,21 +348,17 @@ header { display: flex; align-items: center; justify-content: space-between;
       <button class="modal-close" onclick="closeModal('overlay-users')">✕</button>
     </div>
     <div class="modal-body">
-      <!-- New user input -->
       <div class="new-user-row">
         <input type="text" id="newUserInput" placeholder="Nombre del usuario…" maxlength="30"
                onkeydown="if(event.key==='Enter') createUser()">
         <button class="btn btn-primary btn-sm" onclick="createUser()">Crear</button>
       </div>
-      <!-- Existing users -->
       <div class="users-grid" id="users-grid"></div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════ -->
-<!-- MODAL: ASIGNAR USUARIOS        -->
-<!-- ══════════════════════════════ -->
+<!-- MODAL ASIGNAR -->
 <div class="overlay" id="overlay-assign" onclick="closeOnBg(event,'overlay-assign')">
   <div class="modal">
     <div class="modal-header">
@@ -362,164 +376,56 @@ header { display: flex; align-items: center; justify-content: space-between;
 </div>
 
 <script>
-/* ══════════════════════════════════════════════════════
-   STATE
-══════════════════════════════════════════════════════ */
 const TASKS_KEY = 'kanban_tasks_v2';
 const USERS_KEY = 'kanban_users_v1';
+let tasks = [], users = [];
 
-let tasks = [];
-let users = [];
-
-/* 12 distinct palette colors */
 const COLORS = [
   '#f0a500','#5b9bff','#3ecf6a','#ff7043','#ab7df8',
-  '#00c9c9','#ff5c8a','#a3e635','#f97316','#38bdf8',
-  '#e879f9','#facc15'
+  '#00c9c9','#ff5c8a','#a3e635','#f97316','#38bdf8','#e879f9','#facc15'
 ];
 
-/* ══════════════════════════════════════════════════════
-   STORAGE — localStorage con fallback a cookies
-   (Google Sites bloquea localStorage en iframes;
-    las cookies funcionan en ambos contextos)
-══════════════════════════════════════════════════════ */
-
-/* — Detectar si localStorage está disponible — */
-function lsAvailable() {
-  try {
-    const k = '__kanban_test__';
-    localStorage.setItem(k, '1');
-    const ok = localStorage.getItem(k) === '1';
-    localStorage.removeItem(k);
-    return ok;
-  } catch(e) { return false; }
-}
-const USE_LS = lsAvailable();
-
-/* — Helpers de cookies (con chunking para datos grandes) — */
-const COOKIE_OPTS = '; max-age=31536000; path=/; SameSite=None; Secure';
-const CHUNK_SIZE  = 2800; // bytes seguros por cookie
-
-function cookieSet(key, value) {
-  const str = encodeURIComponent(value);
-  const total = Math.ceil(str.length / CHUNK_SIZE) || 1;
-  // Limpiar chunks anteriores
-  for (let i = 0; i < 30; i++) {
-    if (getCookieRaw(key + '_' + i) === null) break;
-    document.cookie = key + '_' + i + '=; max-age=0; path=/';
-  }
-  document.cookie = key + '_n=' + total + COOKIE_OPTS;
-  for (let i = 0; i < total; i++) {
-    document.cookie = key + '_' + i + '=' +
-      str.slice(i * CHUNK_SIZE, (i + 1) * CHUNK_SIZE) + COOKIE_OPTS;
-  }
-}
-
-function cookieGet(key) {
-  const n = parseInt(getCookieRaw(key + '_n') || '0');
-  if (!n) return null;
-  let str = '';
-  for (let i = 0; i < n; i++) {
-    const chunk = getCookieRaw(key + '_' + i);
-    if (chunk === null) return null;
-    str += chunk;
-  }
-  try { return decodeURIComponent(str); } catch(e) { return null; }
-}
-
-function getCookieRaw(name) {
-  const match = document.cookie.split('; ').find(r => r.startsWith(name + '='));
-  return match ? match.slice(name.length + 1) : null;
-}
-
-/* — API pública de almacenamiento — */
-function storeSet(key, value) {
-  const str = JSON.stringify(value);
-  if (USE_LS) {
-    try { localStorage.setItem(key, str); return; } catch(e) {}
-  }
-  try { cookieSet(key, str); } catch(e) {}
-}
-
-function storeGet(key) {
-  if (USE_LS) {
-    try {
-      const v = localStorage.getItem(key);
-      if (v !== null) return JSON.parse(v);
-    } catch(e) {}
-  }
-  try {
-    const v = cookieGet(key);
-    if (v !== null) return JSON.parse(v);
-  } catch(e) {}
-  return null;
-}
-
-/* — Indicador visual del método de almacenamiento — */
-function showStorageBadge() {
-  const badge = document.createElement('div');
-  badge.style.cssText =
-    'position:fixed;bottom:8px;left:10px;font-size:10px;color:var(--muted);' +
-    'font-family:DM Sans,sans-serif;opacity:.55;pointer-events:none;z-index:9999;';
-  badge.textContent = USE_LS ? '💾 localStorage' : '🍪 cookies';
-  document.body.appendChild(badge);
-}
-
-/* — save / load — */
 function save() {
-  storeSet(TASKS_KEY, tasks);
-  storeSet(USERS_KEY, users);
+  localStorage.setItem(TASKS_KEY, JSON.stringify(tasks));
+  localStorage.setItem(USERS_KEY, JSON.stringify(users));
 }
+
 function load() {
-  tasks = storeGet(TASKS_KEY) || [];
-  users = storeGet(USERS_KEY) || [];
+  try { tasks = JSON.parse(localStorage.getItem(TASKS_KEY)) || []; } catch(e) { tasks = []; }
+  try { users = JSON.parse(localStorage.getItem(USERS_KEY)) || []; } catch(e) { users = []; }
   tasks.forEach(t => { if (!t.users) t.users = []; });
 }
 
-/* ══════════════════════════════════════════════════════
-   USERS
-══════════════════════════════════════════════════════ */
 function createUser() {
   const input = document.getElementById('newUserInput');
   const name  = input.value.trim();
   if (!name) { input.focus(); return; }
-  const color = COLORS[users.length % COLORS.length];
-  users.push({ id: uid(), name, color });
-  save();
-  input.value = '';
-  renderUsersModal();
-  updateUsersCountLabel();
-  render(); // refresh avatars
+  users.push({ id: uid(), name, color: COLORS[users.length % COLORS.length] });
+  save(); input.value = '';
+  renderUsersModal(); updateUsersCountLabel(); render();
   toast(`Usuario "${name}" creado`);
 }
 
 function deleteUser(id) {
   const u = users.find(u => u.id === id);
   users = users.filter(u => u.id !== id);
-  // remove from all tasks
-  tasks.forEach(t => { t.users = (t.users || []).filter(uid => uid !== id); });
-  save();
-  renderUsersModal();
-  updateUsersCountLabel();
-  render();
+  tasks.forEach(t => { t.users = (t.users||[]).filter(x => x !== id); });
+  save(); renderUsersModal(); updateUsersCountLabel(); render();
   if (u) toast(`Usuario "${u.name}" eliminado`);
 }
 
 function renderUsersModal() {
   const grid = document.getElementById('users-grid');
   grid.innerHTML = '';
-  if (users.length === 0) {
+  if (!users.length) {
     grid.innerHTML = '<div style="color:var(--muted);font-size:13px;text-align:center;padding:8px 0">Aún no hay usuarios. ¡Crea el primero!</div>';
     return;
   }
   users.forEach(u => {
     const row = document.createElement('div');
     row.className = 'user-row';
-    row.innerHTML = `
-      <div class="user-avatar-big" style="background:${u.color}">${initials(u.name)}</div>
-      <div style="flex:1">
-        <div class="user-name">${esc(u.name)}</div>
-      </div>
+    row.innerHTML = `<div class="user-avatar-big" style="background:${u.color}">${initials(u.name)}</div>
+      <div style="flex:1"><div class="user-name">${esc(u.name)}</div></div>
       <button class="btn btn-danger btn-sm" onclick="deleteUser('${u.id}')">Eliminar</button>`;
     grid.appendChild(row);
   });
@@ -529,119 +435,81 @@ function updateUsersCountLabel() {
   document.getElementById('users-count-label').textContent = `👤 Usuarios (${users.length})`;
 }
 
-/* ══════════════════════════════════════════════════════
-   ASSIGN
-══════════════════════════════════════════════════════ */
-let assigningTaskId = null;
-let assignTemp = [];   // temp selection
+let assigningTaskId = null, assignTemp = [];
 
 function openAssignModal(taskId) {
   const task = tasks.find(t => t.id === taskId);
   if (!task) return;
   assigningTaskId = taskId;
-  assignTemp = [...(task.users || [])];
-
-  document.getElementById('assign-subtitle').innerHTML =
-    `Asignando a: <strong>${esc(task.text)}</strong>`;
-
+  assignTemp = [...(task.users||[])];
+  document.getElementById('assign-subtitle').innerHTML = `Asignando a: <strong>${esc(task.text)}</strong>`;
   const list = document.getElementById('users-list-assign');
   list.innerHTML = '';
-
-  if (users.length === 0) {
+  if (!users.length) {
     list.innerHTML = '<div class="no-users-msg">Primero crea usuarios desde el botón <strong>Usuarios</strong>.</div>';
   } else {
     users.forEach(u => {
+      const sel = assignTemp.includes(u.id);
       const row = document.createElement('div');
-      row.className = 'user-assign-row' + (assignTemp.includes(u.id) ? ' selected' : '');
-      row.dataset.uid = u.id;
-      row.innerHTML = `
-        <div class="check">${assignTemp.includes(u.id) ? '✓' : ''}</div>
+      row.className = 'user-assign-row' + (sel ? ' selected' : '');
+      row.innerHTML = `<div class="check">${sel?'✓':''}</div>
         <div class="user-avatar-big" style="background:${u.color};width:28px;height:28px;font-size:11px">${initials(u.name)}</div>
         <span style="font-size:14px">${esc(u.name)}</span>`;
       row.addEventListener('click', () => toggleAssignRow(row, u.id));
       list.appendChild(row);
     });
   }
-
   openModal('overlay-assign');
 }
 
-function toggleAssignRow(row, uid) {
-  if (assignTemp.includes(uid)) {
-    assignTemp = assignTemp.filter(id => id !== uid);
-    row.classList.remove('selected');
-    row.querySelector('.check').textContent = '';
+function toggleAssignRow(row, id) {
+  if (assignTemp.includes(id)) {
+    assignTemp = assignTemp.filter(x => x !== id);
+    row.classList.remove('selected'); row.querySelector('.check').textContent = '';
   } else {
-    assignTemp.push(uid);
-    row.classList.add('selected');
-    row.querySelector('.check').textContent = '✓';
+    assignTemp.push(id);
+    row.classList.add('selected'); row.querySelector('.check').textContent = '✓';
   }
 }
 
 function saveAssignment() {
   const task = tasks.find(t => t.id === assigningTaskId);
-  if (task) {
-    task.users = [...assignTemp];
-    save();
-    render();
-    toast('Asignación guardada ✓');
-  }
+  if (task) { task.users = [...assignTemp]; save(); render(); toast('Asignación guardada ✓'); }
   closeModal('overlay-assign');
 }
 
-/* ══════════════════════════════════════════════════════
-   TASKS
-══════════════════════════════════════════════════════ */
 function addTask() {
   const input = document.getElementById('taskInput');
   const col   = document.getElementById('colSelect').value;
   const text  = input.value.trim();
   if (!text) { input.focus(); return; }
   tasks.push({ id: uid(), text, col, users: [] });
-  save(); render();
-  input.value = '';
-  input.focus();
+  save(); render(); input.value = ''; input.focus();
   toast('Tarea añadida ✓');
 }
 
 function deleteTask(id) {
   tasks = tasks.filter(t => t.id !== id);
-  save(); render();
-  toast('Tarea eliminada');
+  save(); render(); toast('Tarea eliminada');
 }
 
-/* ══════════════════════════════════════════════════════
-   RENDER
-══════════════════════════════════════════════════════ */
 function render() {
   ['pendiente','proceso','finalizada'].forEach(col => {
     const list  = document.getElementById('list-' + col);
     const badge = document.getElementById('badge-' + col);
     const colTasks = tasks.filter(t => t.col === col);
     badge.textContent = colTasks.length;
-
-    // remove deleted cards
     [...list.querySelectorAll('.task')].forEach(el => {
       if (!colTasks.find(t => t.id === el.dataset.id)) el.remove();
     });
-
-    // add new / update existing
     colTasks.forEach(task => {
       let el = list.querySelector(`.task[data-id="${task.id}"]`);
-      if (!el) {
-        el = buildTaskEl(task);
-        list.appendChild(el);
-      } else {
-        updateTaskEl(el, task);
-      }
+      if (!el) { el = buildTaskEl(task); list.appendChild(el); }
+      else updateTaskEl(el, task);
     });
-
-    // reorder
     colTasks.forEach(task => list.appendChild(list.querySelector(`.task[data-id="${task.id}"]`)));
-
-    // empty state
     let empty = list.querySelector('.empty');
-    if (colTasks.length === 0) {
+    if (!colTasks.length) {
       if (!empty) { empty = document.createElement('div'); empty.className='empty'; empty.textContent='Sin tareas'; list.appendChild(empty); }
     } else { if (empty) empty.remove(); }
   });
@@ -649,46 +517,35 @@ function render() {
 
 function buildTaskEl(task) {
   const el = document.createElement('div');
-  el.className = 'task';
-  el.dataset.id = task.id;
-  el.draggable = true;
+  el.className = 'task'; el.dataset.id = task.id; el.draggable = true;
   el.addEventListener('dragstart', e => onDragStart(e, task.id));
   el.addEventListener('dragend', onDragEnd);
-  updateTaskEl(el, task);
-  return el;
+  updateTaskEl(el, task); return el;
 }
 
 function updateTaskEl(el, task) {
-  el.innerHTML = `
-    <div class="task-top">
+  el.innerHTML = `<div class="task-top">
       <span class="task-text">${esc(task.text)}</span>
-      <button class="btn-delete" title="Eliminar" onclick="deleteTask('${task.id}')">✕</button>
+      <button class="btn-delete" onclick="deleteTask('${task.id}')">✕</button>
     </div>
     <div class="task-footer">
       <div class="assignees">${renderAvatars(task)}</div>
-      <button class="btn-assign" onclick="openAssignModal('${task.id}')">
-        ${(task.users||[]).length > 0 ? '✎ editar' : '+ asignar'}
-      </button>
+      <button class="btn-assign" onclick="openAssignModal('${task.id}')">${(task.users||[]).length>0?'✎ editar':'+ asignar'}</button>
     </div>`;
 }
 
 function renderAvatars(task) {
-  const ids = task.users || [];
-  if (ids.length === 0) return '';
-  const show = ids.slice(0, 3);
-  const rest  = ids.length - show.length;
-  let html = show.map(uid => {
-    const u = users.find(u => u.id === uid);
-    if (!u) return '';
-    return `<div class="avatar" style="background:${u.color}" title="${esc(u.name)}">${initials(u.name)}</div>`;
+  const ids = task.users||[];
+  if (!ids.length) return '';
+  const show = ids.slice(0,3), rest = ids.length - show.length;
+  let html = show.map(id => {
+    const u = users.find(u => u.id === id);
+    return u ? `<div class="avatar" style="background:${u.color}" title="${esc(u.name)}">${initials(u.name)}</div>` : '';
   }).join('');
   if (rest > 0) html += `<div class="avatar-more">+${rest}</div>`;
   return html;
 }
 
-/* ══════════════════════════════════════════════════════
-   DRAG & DROP
-══════════════════════════════════════════════════════ */
 let dragId = null, ghost = null;
 
 function onDragStart(e, id) {
@@ -706,7 +563,6 @@ function onDragEnd() {
 
 function onDragOver(e) {
   e.preventDefault();
-  e.dataTransfer.dropEffect = 'move';
   const col = e.currentTarget;
   col.classList.add('drag-over');
   if (!ghost) { ghost = document.createElement('div'); ghost.className = 'ghost'; }
@@ -728,26 +584,18 @@ function onDrop(e, colId) {
   if (!dragId) return;
   e.currentTarget.classList.remove('drag-over');
   if (ghost) { ghost.remove(); ghost = null; }
-
   const task = tasks.find(t => t.id === dragId);
   if (!task) return;
   const oldCol = task.col;
   task.col = colId;
-
   const list = document.getElementById('list-' + colId);
   const after = getDragAfter(list, e.clientY);
   const afterId = after?.dataset.id;
-
   tasks = tasks.filter(t => t.id !== dragId);
-  if (afterId) {
-    const idx = tasks.findIndex(t => t.id === afterId);
-    tasks.splice(idx, 0, task);
-  } else {
-    const colTasks = tasks.filter(t => t.col === colId);
-    const lastIdx  = colTasks.length > 0
-      ? tasks.indexOf(colTasks[colTasks.length - 1]) + 1
-      : tasks.length;
-    tasks.splice(lastIdx, 0, task);
+  if (afterId) { tasks.splice(tasks.findIndex(t => t.id === afterId), 0, task); }
+  else {
+    const ct = tasks.filter(t => t.col === colId);
+    tasks.splice(ct.length > 0 ? tasks.indexOf(ct[ct.length-1])+1 : tasks.length, 0, task);
   }
   save(); render();
   if (oldCol !== colId) toast('Tarea movida ✓');
@@ -761,34 +609,17 @@ function getDragAfter(list, y) {
   }, { offset: Number.NEGATIVE_INFINITY }).element;
 }
 
-/* ══════════════════════════════════════════════════════
-   MODAL HELPERS
-══════════════════════════════════════════════════════ */
-function openModal(id) {
-  document.getElementById(id).classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeModal(id) {
-  document.getElementById(id).classList.remove('open');
-  document.body.style.overflow = '';
-}
-function closeOnBg(e, id) {
-  if (e.target === document.getElementById(id)) closeModal(id);
-}
+function openModal(id)  { document.getElementById(id).classList.add('open'); document.body.style.overflow='hidden'; }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; }
+function closeOnBg(e, id) { if (e.target === document.getElementById(id)) closeModal(id); }
 function openUsersModal() {
-  renderUsersModal();
-  openModal('overlay-users');
+  renderUsersModal(); openModal('overlay-users');
   setTimeout(() => document.getElementById('newUserInput').focus(), 250);
 }
 
-/* ══════════════════════════════════════════════════════
-   UTILS
-══════════════════════════════════════════════════════ */
 function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2,6); }
 function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-function initials(name) {
-  return name.trim().split(/\s+/).slice(0,2).map(w=>w[0].toUpperCase()).join('');
-}
+function initials(n) { return n.trim().split(/\s+/).slice(0,2).map(w=>w[0].toUpperCase()).join(''); }
 
 let toastTimer;
 function toast(msg) {
@@ -800,18 +631,44 @@ function toast(msg) {
   toastTimer = setTimeout(() => el.remove(), 2400);
 }
 
-/* ══════════════════════════════════════════════════════
-   ENTER KEY
-══════════════════════════════════════════════════════ */
-document.getElementById('taskInput').addEventListener('keydown', e => {
-  if (e.key === 'Enter') addTask();
-});
+document.getElementById('taskInput').addEventListener('keydown', e => { if (e.key==='Enter') addTask(); });
 
-/* ══════════════════════════════════════════════════════
-   INIT
-══════════════════════════════════════════════════════ */
+
+/* PASSWORD */
+const PASSWORD     = 'projectDimension';
+const SESSION_KEY  = 'kanban_auth';
+
+function checkPassword() {
+  const input = document.getElementById('lockInput');
+  const error = document.getElementById('lock-error');
+  if (input.value === PASSWORD) {
+    sessionStorage.setItem(SESSION_KEY, '1');
+    const ls = document.getElementById('lock-screen');
+    ls.style.opacity = '0';
+    ls.style.transition = 'opacity .3s';
+    setTimeout(() => ls.classList.add('hidden'), 300);
+    error.textContent = '';
+  } else {
+    input.classList.remove('error');
+    void input.offsetWidth;
+    input.classList.add('error');
+    error.textContent = 'Contraseña incorrecta';
+    input.value = '';
+    input.focus();
+    setTimeout(() => input.classList.remove('error'), 400);
+  }
+}
+
+function initAuth() {
+  if (sessionStorage.getItem(SESSION_KEY) === '1') {
+    document.getElementById('lock-screen').classList.add('hidden');
+  } else {
+    setTimeout(() => document.getElementById('lockInput').focus(), 100);
+  }
+}
+
+initAuth();
 load();
-showStorageBadge();
 updateUsersCountLabel();
 render();
 </script>
