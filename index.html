@@ -635,8 +635,8 @@ document.getElementById('taskInput').addEventListener('keydown', e => { if (e.ke
 
 
 /* PASSWORD */
-const PASSWORD     = 'projectDimension';
-const SESSION_KEY  = 'kanban_auth';
+const PASSWORD = 'projectDimension';
+const SESSION_KEY = 'kanban_auth';
 
 function checkPassword() {
   const input = document.getElementById('lockInput');
@@ -652,7 +652,7 @@ function checkPassword() {
     input.classList.remove('error');
     void input.offsetWidth;
     input.classList.add('error');
-    error.textContent = 'Contraseña incorrecta';
+    error.textContent = 'Contrasena incorrecta';
     input.value = '';
     input.focus();
     setTimeout(() => input.classList.remove('error'), 400);
@@ -666,7 +666,6 @@ function initAuth() {
     setTimeout(() => document.getElementById('lockInput').focus(), 100);
   }
 }
-
 initAuth();
 load();
 updateUsersCountLabel();
